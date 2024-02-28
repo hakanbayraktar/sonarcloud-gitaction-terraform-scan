@@ -1,7 +1,10 @@
 name: "Main Workflow"
 on:
   workflow_dispatch:
-
+  
+env:
+  TF_LOG: INFO
+  AWS_REGION: ${{ secrets.AWS_REGION }}
 jobs:
   Sonar_Scan:
     if: github.ref == 'refs/heads/main'
